@@ -53,21 +53,10 @@ function changeTitleColor() {
     newH3Color += "<span style='color:" + color + "'>" + h3Text[i] + "</span>";
   }
 
-  // let backgrounds = [
-  //   "#images/color-grid",
-  //   "#images/color-grid-2",
-  // ];
-
-  //   let bodyBackground = "";
-  //   for (let i = 0; i < backgrounds.length; i++) {
-  //     let background = backgrounds[Math.floor(Math.random() * backgrounds.length)];
-  //     document.body.style.backgroundImage = background;
-  //   }
-
   h1.innerHTML = newH1Color;
   h2.innerHTML = newH2Color;
   h3.innerHTML = newH3Color;
-  document.body.style.backgroundImage = "url('images/color-grid.png')";
+  document.body.style.backgroundImage = "url(images/color-grid-2.png";
 }
 
 function resetTitleColor() {
