@@ -56,7 +56,7 @@ function changeTitleColor() {
   h1.innerHTML = newH1Color;
   h2.innerHTML = newH2Color;
   h3.innerHTML = newH3Color;
-  document.body.style.backgroundImage = "url(images/color-grid-2.png";
+  document.body.style.backgroundImage = "url(images/color-grid.png)";
 }
 
 function resetTitleColor() {
