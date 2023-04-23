@@ -202,7 +202,7 @@ function loadGame() {
       document.getElementById("countdown").textContent = "";
       randomizeColors();
     }
-  }, 100);
+  }, 1000);
 }
 
 // Function to randomize the color blocks shown in the game
