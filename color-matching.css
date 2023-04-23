@@ -76,3 +76,8 @@ a {
     transition: 800ms;
     cursor: pointer;
 }
+
+.firstUserSelection {
+    transform: scale(1.2);
+    transition: 800ms;
+}

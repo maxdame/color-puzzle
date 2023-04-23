@@ -3,6 +3,9 @@ window.addEventListener("load", () => {
   // Get all the img elements on the HTML page
   let startImages = document.getElementsByTagName("img");
 
+  // Initalize game status and use to enure colors are randomized only once
+  let gameLoaded = false;
+
   // Loop through all the img elements
   for (let i = 0; i < startImages.length; i++) {
     // If the index is 12, change the source of the image to black.png and add a hover-scale class
@@ -10,7 +13,13 @@ window.addEventListener("load", () => {
     if (i === 12) {
       startImages[i].src = "images/black.png";
       startImages[i].classList.add("hover-scale");
-      startImages[i].addEventListener("click", loadGame);
+      //Event listener function to only loadGame if gameLoaded is false
+      startImages[i].addEventListener("click", () => {
+        if (!gameLoaded) {
+          loadGame();
+          gameLoaded = true;
+        }
+      });
       startImages[i].addEventListener("mouseover", changeTitleColor);
       startImages[i].addEventListener("mouseout", resetTitleColor);
     } else {
@@ -220,5 +229,37 @@ function randomizeColors() {
 
     // Set the color block's image source to the corresponding solution array relative path at the new index
     startImages[i].src = solution[newIndex];
+  }
+  userSelectionSwap();
+}
+
+// Function to listen for user selections and swap
+function userSelectionSwap() {
+  let selectedBlock = null; // variable to keep track of the selected image element
+
+  // function to handle click events on color blocks
+  function handleBlockClick(event) {
+    const clickedBlock = event.target;
+
+    if (selectedBlock === null) {
+      // if no image is currently selected
+      selectedBlock = clickedBlock; // select the clicked image
+      selectedBlock.classList.add("firstUserSelection"); // add hover effect to the selected image
+    } else {
+      // if an image is already selected swap the source attributes of the selected and clicked images
+      const selectedSrc = selectedBlock.src;
+      selectedBlock.src = clickedBlock.src;
+      clickedBlock.src = selectedSrc;
+
+      // remove hover effect from the previously selected image
+      selectedBlock.classList.remove("firstUserSelection");
+      selectedBlock = null; // reset the selected image variable
+    }
+  }
+
+  // loop through all the img elements on the HTML page
+  const colorBlock = document.getElementsByTagName("img");
+  for (let i = 0; i < colorBlock.length; i++) {
+    colorBlock[i].addEventListener("click", handleBlockClick); // add click event listener to each image element
   }
 }
