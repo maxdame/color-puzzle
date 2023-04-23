@@ -202,7 +202,7 @@ function loadGame() {
       document.getElementById("countdown").textContent = "";
       randomizeColors();
     }
-  }, 1000);
+  }, 100);
 }
 
 // Function to randomize the color blocks shown in the game
@@ -234,9 +234,16 @@ function randomizeColors() {
   userSelectionSwap();
 }
 
-// Function to listen for user selections and swap
 function userSelectionSwap() {
-  let selectedBlock = null; // variable to keep track of the selected image element
+  // Loop through all the img elements on the HTML page
+  const colorBlock = document.getElementsByTagName("img");
+  for (let i = 0; i < colorBlock.length; i++) {
+    // Add click event listener to each image element
+    colorBlock[i].addEventListener("click", handleBlockClick);
+  }
+
+  // Variable to keep track of the selected image element
+  let selectedBlock = null;
 
   // Function to handle click events on color blocks
   function handleBlockClick(event) {
@@ -245,6 +252,7 @@ function userSelectionSwap() {
     if (selectedBlock === null) {
       // If no block is currently selected
       selectedBlock = clickedBlock; // Select the clicked block
+      console.log(selectedBlock.src.split("/").pop());
       selectedBlock.classList.add("firstUserSelection"); // Add hover effect to the selected block
     } else {
       // If an block is already selected swap the source attributes of the selected and clicked block
@@ -255,12 +263,21 @@ function userSelectionSwap() {
       // Remove hover effect from the previously selected block
       selectedBlock.classList.remove("firstUserSelection");
       selectedBlock = null; // Reset the selected block
-    }
-  }
 
-  // Loop through all the img elements on the HTML page
-  const colorBlock = document.getElementsByTagName("img");
-  for (let i = 0; i < colorBlock.length; i++) {
-    colorBlock[i].addEventListener("click", handleBlockClick); // Add click event listener to each image element
+      // Check if the user has won after every swap
+      let colorMatch = true;
+      const colorBlock = document.getElementsByTagName("img");
+      for (let i = 0; i < colorBlock.length; i++) {
+        const imageName = colorBlock[i].src.split("/").pop(); // Extract only the file name from the source
+        if (imageName !== solution[i].split("/").pop()) {
+          // Compare only the file name with the solution array
+          colorMatch = false;
+          break;
+        }
+      }
+      if (colorMatch) {
+        alert("You won!");
+      }
+    }
   }
 }
