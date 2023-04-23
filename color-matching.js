@@ -230,6 +230,7 @@ function randomizeColors() {
     // Set the color block's image source to the corresponding solution array relative path at the new index
     startImages[i].src = solution[newIndex];
   }
+  // Call function to handle user selections and swap
   userSelectionSwap();
 }
 
@@ -237,29 +238,29 @@ function randomizeColors() {
 function userSelectionSwap() {
   let selectedBlock = null; // variable to keep track of the selected image element
 
-  // function to handle click events on color blocks
+  // Function to handle click events on color blocks
   function handleBlockClick(event) {
     const clickedBlock = event.target;
 
     if (selectedBlock === null) {
-      // if no image is currently selected
-      selectedBlock = clickedBlock; // select the clicked image
-      selectedBlock.classList.add("firstUserSelection"); // add hover effect to the selected image
+      // If no block is currently selected
+      selectedBlock = clickedBlock; // Select the clicked block
+      selectedBlock.classList.add("firstUserSelection"); // Add hover effect to the selected block
     } else {
-      // if an image is already selected swap the source attributes of the selected and clicked images
+      // If an block is already selected swap the source attributes of the selected and clicked block
       const selectedSrc = selectedBlock.src;
       selectedBlock.src = clickedBlock.src;
       clickedBlock.src = selectedSrc;
 
-      // remove hover effect from the previously selected image
+      // Remove hover effect from the previously selected block
       selectedBlock.classList.remove("firstUserSelection");
-      selectedBlock = null; // reset the selected image variable
+      selectedBlock = null; // Reset the selected block
     }
   }
 
-  // loop through all the img elements on the HTML page
+  // Loop through all the img elements on the HTML page
   const colorBlock = document.getElementsByTagName("img");
   for (let i = 0; i < colorBlock.length; i++) {
-    colorBlock[i].addEventListener("click", handleBlockClick); // add click event listener to each image element
+    colorBlock[i].addEventListener("click", handleBlockClick); // Add click event listener to each image element
   }
 }
