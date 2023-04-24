@@ -293,7 +293,7 @@ function userSelectionSwap() {
       }
       if (colorMatch) {
         document.getElementById("rules").textContent = "Congratulations! You successfully arranged the color blocks.";
-        alert("Congratulations! You successfully arranged the color blocks.")
+        alert("Congratulations! You successfully arranged the color blocks.");
       }
     }
   }

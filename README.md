@@ -7,5 +7,5 @@ The game generates a pixelated color gradient then randomizes the position of ea
 The basic game design and logic is pretty much completed. Below are the features I plan to add:
 
 - Add a counter to display the current number of moves after each block swap.
-- Add end game stylization and prompt the user to reset/replay (not using browser alert meesages).
+- Add end game stylization and prompt the user to reset/replay (not using browser alert messages).
 - Add more color gradients and allow the user to progress levels.
