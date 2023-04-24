@@ -134,31 +134,31 @@ function resetTitleColor() {
 // Array of each correct relative path already in proper index order
 // To be used to check user arranged block positions are correct
 const solution = [
-  "game-images/1-1.png",
-  "game-images/1-2.png",
-  "game-images/1-3.png",
-  "game-images/1-4.png",
-  "game-images/1-5.png",
-  "game-images/2-1.png",
-  "game-images/2-2.png",
-  "game-images/2-3.png",
-  "game-images/2-4.png",
-  "game-images/2-5.png",
-  "game-images/3-1.png",
-  "game-images/3-2.png",
-  "game-images/3-3.png",
-  "game-images/3-4.png",
-  "game-images/3-5.png",
-  "game-images/4-1.png",
-  "game-images/4-2.png",
-  "game-images/4-3.png",
-  "game-images/4-4.png",
-  "game-images/4-5.png",
-  "game-images/5-1.png",
-  "game-images/5-2.png",
-  "game-images/5-3.png",
-  "game-images/5-4.png",
-  "game-images/5-5.png",
+  "level-one/1-1.png",
+  "level-one/1-2.png",
+  "level-one/1-3.png",
+  "level-one/1-4.png",
+  "level-one/1-5.png",
+  "level-one/2-1.png",
+  "level-one/2-2.png",
+  "level-one/2-3.png",
+  "level-one/2-4.png",
+  "level-one/2-5.png",
+  "level-one/3-1.png",
+  "level-one/3-2.png",
+  "level-one/3-3.png",
+  "level-one/3-4.png",
+  "level-one/3-5.png",
+  "level-one/4-1.png",
+  "level-one/4-2.png",
+  "level-one/4-3.png",
+  "level-one/4-4.png",
+  "level-one/4-5.png",
+  "level-one/5-1.png",
+  "level-one/5-2.png",
+  "level-one/5-3.png",
+  "level-one/5-4.png",
+  "level-one/5-5.png",
 ];
 
 // Function to load the game
@@ -202,7 +202,7 @@ function loadGame() {
       document.getElementById("countdown").textContent = "";
       randomizeColors();
     }
-  }, 1000);
+  }, 500);
 }
 
 // Function to randomize the color blocks shown in the game
