@@ -44,16 +44,31 @@ function changeTitleColor() {
 
   // Create an array of color values
   let colors = [
-    "#ff8972",
-    "#e67385",
-    "#90578b",
-    "#322f86",
-    "#071482",
-    "#fdc1d5",
-    "#fdbdbc",
-    "#feb28c",
-    "#fda665",
-    "#ff9762",
+    "#fed2dc",
+    "#fec39a",
+    "#ffa990",
+    "#aa7aa7",
+    "#122fa1",
+    "#fdc8d4",
+    "#feb687",
+    "#ff987c",
+    "#9b6596",
+    "#0c208f",
+    "#fcb9c8",
+    "#fda470",
+    "#fe8264",
+    "#894c7f",
+    "#061278",
+    "#fca8ba",
+    "#fd905a",
+    "#fe6b4e",
+    "#773968",
+    "#040b61",
+    "#fc9fb3",
+    "#fd864f",
+    "#fe6043",
+    "#6f2f5d",
+    "#020856",
   ];
 
   // Create a new string with h1 text that contains each character wrapped in a span element with a random color
@@ -193,13 +208,14 @@ function loadGame() {
   // Create an interval that counts down every second until the game starts
   const countdown = setInterval(() => {
     // Set the text content of the element with id "countdown" to display the remaining time until the game starts
-    document.getElementById("countdown").textContent = `Game starting in ${seconds} seconds...`;
+    document.getElementById("countdown").textContent = `Game starting in ${seconds}...`;
     seconds--;
 
     // If the countdown reaches 0, clear the interval and remove the countdown text, then start the game by randomizing the colors
     if (seconds < 0) {
       clearInterval(countdown);
       document.getElementById("countdown").textContent = "";
+      document.getElementById("rules").textContent = "";
       randomizeColors();
     }
   }, 500);
@@ -276,7 +292,8 @@ function userSelectionSwap() {
         }
       }
       if (colorMatch) {
-        alert("You won!");
+        document.getElementById("rules").textContent = "Congratulations! You successfully arranged the color blocks.";
+        alert("Congratulations! You successfully arranged the color blocks.")
       }
     }
   }
