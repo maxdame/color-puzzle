@@ -9,3 +9,5 @@ The basic game design and logic is pretty much completed. Below are the features
 - Add a counter to display the current number of moves after each block swap.
 - Add end game stylization and prompt the user to reset/replay (not using browser alert messages).
 - Add more color gradients and allow the user to progress levels.
+
+* Currently the color gradients/blocks are manually designed in Photoshop and exported to the project as png. files. I would eventually like to develop a method to streamline this process to optimize the process of adding additional levels. 
