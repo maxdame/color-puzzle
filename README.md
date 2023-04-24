@@ -4,4 +4,8 @@ Color Puzzle is heavly inspired by the I Love Hue mobile app.
 
 The game generates a pixelated color gradient then randomizes the position of each color block. The objective is for the user to rearrange the color blocks to match the solution's color gradient.
 
-Currently I have built the game to randomize the color blocks. The next feature is to design the functionality to select a color block and swap it's position with another color block then check if the position of all colors blocks matches the solution's color gradient.
+The basic game design and logic is pretty much completed. Below are the features I plan to add:
+
+- Add a counter to display the current number of moves after each block swap.
+- Add end game stylization and prompt the user to reset/replay (not using browser alert meesages).
+- Add more color gradients and allow the user to progress levels.
