@@ -277,7 +277,42 @@ function userSelectionSwap() {
       }
       if (colorMatch) {
         alert("You won!");
+        endGame();
       }
     }
   }
+  
 }
+// ... (previous code remains unchanged)
+
+// Function to display end-of-game message and provide option to replay
+function endGame() {
+  const gameContainer = document.getElementById("game-container");
+
+  const endGameMessage = document.createElement("div");
+  endGameMessage.classList.add("end-game-message");
+  endGameMessage.innerHTML = `
+    <h2>Congratulations!</h2>
+    <p>You won!</p>
+    <button id="replay-btn">Replay</button>
+  `;
+
+  gameContainer.appendChild(endGameMessage);
+
+  const replayButton = document.getElementById("replay-btn");
+  replayButton.addEventListener("click", () => {
+    gameContainer.removeChild(endGameMessage);
+    loadGame();
+  });
+}
+
+// ... (previous code remains unchanged)
+
+function handleBlockClick(event) {
+  // ... (previous code remains unchanged)
+
+  if (colorMatch) {
+    endGame();
+  }
+}
+
